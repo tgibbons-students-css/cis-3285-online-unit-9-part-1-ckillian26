@@ -49,6 +49,7 @@ namespace SingleResponsibilityPrinciple
 
         private bool ValidateTradeData(string[] fields, int currentLine)
         {
+            
             if (fields.Length != 3)
             {
                 LogMessage("WARN", " Line {0} malformed. Only {1} field(s) found.", currentLine, fields.Length);
@@ -62,11 +63,24 @@ namespace SingleResponsibilityPrinciple
             }
 
             int tradeAmount;
-            if (!int.TryParse(fields[1], out tradeAmount))
+          
+            if (!int.TryParse(fields[1], out tradeAmount ))
+            {
+                LogMessage("WARN", " Trade amount on line {0} not a valid integer: '{1}'", currentLine, fields[1]);
+                return false;
+
+            }
+            if ( tradeAmount < 1000)
             {
                 LogMessage("WARN", " Trade amount on line {0} not a valid integer: '{1}'", currentLine, fields[1]);
                 return false;
             }
+            if (tradeAmount > 100000)
+            {
+                LogMessage("WARN", " Trade amount on line {0} not a valid integer: '{1}'", currentLine, fields[1]);
+                return false;
+            }
+            
 
             decimal tradePrice;
             if (!decimal.TryParse(fields[2], out tradePrice))
@@ -104,7 +118,9 @@ namespace SingleResponsibilityPrinciple
         private void StoreTrades(IEnumerable<TradeRecord> trades)
         {
             LogMessage("INFO", "  Connecting to Database");
-            using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
+            string connectSqlServer = "Data Source = athena.css.edu; Initial Catalog = CIS3285; Persist Security Info = True; User ID = tgibbons; Password = Saints4CSS Source = athena.css.edu; Initial Catalog = CIS3285; Persist Security Info = True; User ID = tgibbons; Password = Saints4CSS";
+            using (var connection = new System.Data.SqlClient.SqlConnection(connectSqlServer))
+            //using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
             {
                 connection.Open();
                 using (var transaction = connection.BeginTransaction())
@@ -132,7 +148,7 @@ namespace SingleResponsibilityPrinciple
         }
 
         public void ProcessTrades(Stream stream)
-        {
+        { 
             var lines = ReadTradeData(stream);
             var trades = ParseTrades(lines);
             StoreTrades(trades);
