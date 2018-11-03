@@ -9,3 +9,13 @@ C:\Users\ckillian\Source\Repos\cis-3285-online-unit-9-part-1-ckillian26\Database
 C:\Users\ckillian\Source\Repos\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Database.sqlprojAssemblyReference.cache
 C:\Users\ckillian\Source\Repos\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Database.dll
 C:\Users\ckillian\Source\Repos\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Database.pdb
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\bin\Debug\Database.dacpac
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\bin\Debug\Database.dll
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\bin\Debug\Database.pdb
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Database.sqlprojAssemblyReference.cache
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Model.xml
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\refactor.xml
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\postdeploy.sql
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\predeploy.sql
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Database.dll
+C:\Users\chris\Source\Repos\tgibbons-students-css\cis-3285-online-unit-9-part-1-ckillian26\Database\obj\Debug\Database.pdb
